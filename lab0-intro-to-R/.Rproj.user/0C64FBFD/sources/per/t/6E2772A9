@@ -1,0 +1,31 @@
+{
+    "id": "6E2772A9",
+    "path": "~/Documents/_Courses/PSTAT 5LS/_F24 5LS/Labs/lab0-intro-to-R-f24/lab0-slides.Rmd",
+    "project_path": "lab0-slides.Rmd",
+    "type": "r_markdown",
+    "hash": "502115263",
+    "contents": "",
+    "dirty": false,
+    "created": 1723059191982.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "1,24",
+        "scrollLine": "0",
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "0",
+        "rmdVisualModeLocation": "5474:3526",
+        "rmdVisualCollapsedChunks": ""
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1727464227,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1727464227940,
+    "read_only": false,
+    "read_only_alternatives": []
+}
