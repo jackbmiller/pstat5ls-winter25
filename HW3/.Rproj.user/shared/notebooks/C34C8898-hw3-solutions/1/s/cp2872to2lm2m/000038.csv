@@ -1,0 +1,6 @@
+"0","# Run this code chunk to create a histogram of the chance model with lines to indicate the cutoff for values that are as unusual as or more unusual than our sample results. "
+"0","nullValue <- 0.59"
+"0","phat <- 2781/5057"
+"0","hist(sim2,"
+"0","     main = ""Histogram of Simulated Proportions Under H0"","
+"0","     xlab = ""Simulated Proportions"")"

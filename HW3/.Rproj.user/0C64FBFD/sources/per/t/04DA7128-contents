@@ -1,0 +1,96 @@
+---
+title: "PSTAT 5LS HW 3 R WORK SOLUTIONS"
+author: "Professor Miller"
+date: "DO NOT SHARE THIS WITH STUDENTS"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(stats250sbi)
+```
+
+# Don't Forget to Rename your Document
+
+To avoid your work being overwritten, **rename** this file (`hw3.Rmd`). You could add your name to the file name (e.g., `hw3-profmiller.Rmd`).
+
+# Introduction
+
+In 2018, 59\% of adults in the United States said that there are too few women in top executive business positions. Has the rate changed? Recently, researchers found that 663 of 1200 U.S. adults surveyed said that there are too few women in top executive business positions.
+
+# Run the Simulation
+
+```{r setSeed, error = T}
+# Run this code chunk to set the seed so that your results match what your TA is expecting. 
+set.seed(941)
+
+```
+
+```{r runSim, error = T}
+# Fill in the values for chanceSuccess, numDraws, and numRepetitions below to have R run 1000 repetitions of the simulation. Do not start your code on this line, and do not start your code with # (this is a comment, R will ignore it).
+sim2 <- simulate_chance_model(chanceSuccess =  0.59, 
+                              numDraws =  1200, 
+                              numRepetitions =  1000)
+
+```
+
+```{r simHist, error = T}
+# Run this code chunk to create a histogram of the chance model with lines to indicate the cutoff for values that are as unusual as or more unusual than our sample results. 
+nullValue <- 0.59
+phat <- 663/1200
+hist(sim2,
+     main = "Histogram of Simulated Proportions Under H0",
+     xlab = "Simulated Proportions")
+abline(v = nullValue - abs(phat - nullValue), col = "red")
+abline(v = nullValue + abs(phat - nullValue), col = "red")
+
+```
+
+```{r pvalue, error = T}
+# This code chunk contains options for you to calculate the p-value. Uncomment (remove the # at the beginning of the line) the code that will calculate the p-value for your alternative hypothesis. Then run this code chunk. Do not start your code on this line, and do not start your code with # (this is a comment, R will ignore it).
+
+#Uncomment the following line if you had a less than alternative hypothesis
+#sum(sim2 <= phat) / 1000
+
+#Uncomment the following line if you had a two-sided alternative hypothesis
+sum(sim2 <= nullValue - abs(phat - nullValue)) / 1000 + sum(sim2 >= nullValue + abs(phat - nullValue)) / 1000
+
+#Uncomment the following line if you had a greater than alternative hypothesis
+#sum(sim2 >= phat) / 1000
+
+```
+
+<hr />
+
+# Wrap-Up and Submission
+
+At the top of the document, make sure you've changed the `author` field to your name (in quotes!) and the `date` field to today's date.
+
+When you've finished your data analysis, click the **Knit** button one last time.<br />
+
+![Click the "Knit" button at the top of the editor pane"](assets/images/hw1-knit-button.png){width="75%"}
+
+
+### Submission instructions
+
+```{=html}
+<!-- This is a comment and will not show up in your document. Note that the
+numbering here is all 1's. This will automatically be converted to 1, 2, etc.
+when you knit the document; writing all 1's makes it so you don't have to
+constantly update the numbering when you move things around in editing! -->
+```
+1.  In the Files pane, check the box next to your `hw3.html`: </br>
+
+![Check the box next to your `hw1.html`](assets/images/hw1_check_html.png){width="50%"}
+
+2.  Click More → Export... </br>
+
+![Click the More menu, then Export](assets/images/html_export.png){width="50%"}
+
+</br>
+
+3.  Click Download and save the file on your computer in a folder you'll remember and be able to find later. You can just call the file `hw3-yourname.html` or whatever else you'd like (as long as you remember what you called it).
+
+![Click Download to save the file](assets/images/hw1_html_download.png){width="50%"}
+
+Now upload the HTML as your answer to Question 3.4 of HW 3 in Gradescope.

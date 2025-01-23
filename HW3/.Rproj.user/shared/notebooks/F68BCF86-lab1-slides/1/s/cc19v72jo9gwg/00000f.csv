@@ -1,0 +1,5 @@
+"0","boxplot(penguins$flipper_length_mm ~ penguins$island,"
+"0","        main = ""Box Plots of Penguin Flipper Length by Island"","
+"0","        ylab = ""Flipper Length (mm)"","
+"0","        xlab = ""Island"","
+"0","        col = c(""slateblue2"", ""dodgerblue2"", ""mediumaquamarine""))"

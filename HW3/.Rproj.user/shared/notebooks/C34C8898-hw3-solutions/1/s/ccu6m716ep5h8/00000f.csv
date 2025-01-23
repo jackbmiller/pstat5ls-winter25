@@ -1,0 +1,5 @@
+"0","# Fill in the values for chanceSuccess, numDraws, and numRepetitions below to have R run 1000 repetitions of the simulation. Do not start your code on this line, and do not start your code with # (this is a comment, R will ignore it)."
+"0","sim2 <- simulate_chance_model(chanceSuccess =  0.59, "
+"0","                              numDraws =  1200, "
+"0","                              numRepetitions =  1000)"
+"0",""
