@@ -1,0 +1,78 @@
+---
+title: "PSTAT 5LS Lab 7 Notes"
+author: "Your Name Here"
+date: "Winter 2025"
+output: html_document
+---
+
+# Lab Notes
+
+Use this place to take any notes during your lab section.
+
+- Type any notes here
+- Add new notes by using the dash `-` to create a list
+
+# Lab Code
+
+Use the chunks below to try out any code that you'd like. We have loaded the `penguins` data set for you in the first chunk, so you can try things out with this data.
+
+```{r loadGentoo, error = T}
+gentoo <- read.csv("gentoo.csv", stringsAsFactors = TRUE)
+```
+
+```{r tryIt1, error = T}
+# Run this code chunk to have R run the regression and summarize the results. You'll need to change `y` and `x` in the code below to have R run the regression. Be sure to look at the code that your TA shares on their slides.
+line1 <- lm(y ~ x, data = gentoo)
+summary(line1)
+
+```
+
+```{r tryIt2, error = T}
+# Run this code chunk to create a scatterplot of body mass on flipper length, including the regression line
+plot(gentoo$body_mass_g ~ gentoo$flipper_length_mm,
+     main = "Scatterplot of Body Mass versus Flipper Length for Gentoos",
+     xlab = "Flipper Length (mm)",
+     ylab = "Body Mass in (g)", 
+     pch = 19)
+abline(line1, col = "blue")
+
+```
+
+# Code Cheat Sheet
+
+## `~`
+- Read as "by"
+- Used in side-by-side boxplots, scatterplots, and finding linear models
+- `y ~ x` is the correct syntax for linear; `numeric_variable ~` categorical_variable` is the correct syntax for side-by-side boxplots
+
+## `plot(y ~ x, data = data_name)`
+- Used to create a scatterplot of the *y* variable by the *x* variable
+- Can use the argument `data = data_name` to eliminate the need to specify where each of the variables *x* and *y* are contained
+
+## `cor(x, y)`
+- Finds the correlation coefficient between the numeric variable *x* and the numeric variable *y*
+
+## `cor(numeric_data_frame)`
+- Prints a correlation matrix for a data frame with all numeric variables
+
+## `lm(y ~ x, data = data_name)`
+- Finds the linear model between *x* and *y* from `data_name`
+- You'll want to assign this a name in order to use it later
+
+## `summary(linear_model_name)`
+- Prints relevant values of a linear model
+
+## `abline(linear_model_name)`
+- Will plot the line found in `linear_model_name`
+
+## Important plotting arguments
+
+### `main = "Title of Your Graph in Double Quotes"`
+- graph title that must be inside a set of double quotes
+
+### `xlab = "x-axis Label of Your Graph in Double Quotes"`
+- the x- (horizontal) axis label that must be inside a set of double quotes
+
+### `ylab = "y-axis Label of Your Graph in Double Quotes"`
+- the y- (vertical) axis label that must be inside a set of double quotes
+
